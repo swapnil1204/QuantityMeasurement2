@@ -13,4 +13,11 @@ public class MeasurementTest {
         Assertions.assertTrue(zeroFoot.compare(zeroFoot));
     }
 
+    @Test
+    void givenOneInch_WhenCompare_ThenShouldBeEqual() {
+
+        Quantity oneInch = new Quantity(1);
+
+        Assertions.assertTrue(oneInch.compare(oneInch));
+    }
 }
