@@ -14,4 +14,12 @@ public class MeasurementTest {
 
         assertTrue(zeroFoot.equals(anotherZeroFoot));
     }
+
+    @Test
+    void givenZeroFootAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity zeroFoot = new Quantity(0);
+
+        assertFalse(zeroFoot.equals(new Object()));
+    }
 }

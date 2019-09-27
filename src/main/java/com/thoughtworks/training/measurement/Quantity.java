@@ -8,7 +8,7 @@ public class Quantity {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return true;
+    public boolean equals(Object object) {
+        return object instanceof Quantity;
     }
 }
