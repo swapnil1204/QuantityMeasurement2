@@ -32,5 +32,12 @@ public class MeasurementTest {
         assertFalse(oneFoot.equals(twoFoot));
     }
 
+    @Test
+    void givenOneFootAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
+        Quantity oneFoot = new Quantity(1);
+        Quantity twoFoot = null;
+
+        assertFalse(oneFoot.equals(twoFoot));
+    }
 }
