@@ -9,6 +9,10 @@ public class Quantity {
 
     @Override
     public boolean equals(Object object) {
-        return object instanceof Quantity;
+        if(object instanceof Quantity) {
+            Quantity that = (Quantity) object;
+            return this.value == that.value;
+        }
+        return false;
     }
 }

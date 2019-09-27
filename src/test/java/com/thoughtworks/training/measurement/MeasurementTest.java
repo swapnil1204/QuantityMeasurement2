@@ -22,4 +22,15 @@ public class MeasurementTest {
 
         assertFalse(zeroFoot.equals(new Object()));
     }
+
+    @Test
+    void givenOneFootAndTwoFoot_WhenEquals_ThenShouldNotBeEqual() {
+
+        Quantity oneFoot = new Quantity(1);
+        Quantity twoFoot = new Quantity(2);
+
+        assertFalse(oneFoot.equals(twoFoot));
+    }
+
+
 }
