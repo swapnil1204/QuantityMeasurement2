@@ -1,23 +1,17 @@
 package com.thoughtworks.training.measurement;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MeasurementTest {
 
     @Test
-    void givenZeroFoot_WhenCompare_ThenShouldBeEqual() {
+    void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
 
         Quantity zeroFoot = new Quantity(0);
+        Quantity anotherZeroFoot = new Quantity(0);
 
-        Assertions.assertTrue(zeroFoot.compare(zeroFoot));
-    }
-
-    @Test
-    void givenOneInch_WhenCompare_ThenShouldBeEqual() {
-
-        Quantity oneInch = new Quantity(1);
-
-        Assertions.assertTrue(oneInch.compare(oneInch));
+        assertTrue(zeroFoot.equals(anotherZeroFoot));
     }
 }

@@ -4,10 +4,11 @@ public class Quantity {
     private final int value;
 
     Quantity(int value) {
-        this.value=value;
+        this.value = value;
     }
 
-    public boolean compare(Quantity zeroFoot) {
+    @Override
+    public boolean equals(Object obj) {
         return true;
     }
 }
