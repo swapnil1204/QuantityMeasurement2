@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MeasurementTest {
+public class FootTest {
 
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
 
-        Quantity zeroFoot = new Quantity(0);
-        Quantity anotherZeroFoot = new Quantity(0);
+        Foot zeroFoot = new Foot(0);
+        Foot anotherZeroFoot = new Foot(0);
 
         assertTrue(zeroFoot.equals(anotherZeroFoot));
     }
@@ -18,7 +18,7 @@ public class MeasurementTest {
     @Test
     void givenZeroFootAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity zeroFoot = new Quantity(0);
+        Foot zeroFoot = new Foot(0);
 
         assertFalse(zeroFoot.equals(new Object()));
     }
@@ -26,8 +26,8 @@ public class MeasurementTest {
     @Test
     void givenOneFootAndTwoFoot_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1);
-        Quantity twoFoot = new Quantity(2);
+        Foot oneFoot = new Foot(1);
+        Foot twoFoot = new Foot(2);
 
         assertFalse(oneFoot.equals(twoFoot));
     }
@@ -35,8 +35,8 @@ public class MeasurementTest {
     @Test
     void givenOneFootAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneFoot = new Quantity(1);
-        Quantity twoFoot = null;
+        Foot oneFoot = new Foot(1);
+        Foot twoFoot = null;
 
         assertFalse(oneFoot.equals(twoFoot));
     }
