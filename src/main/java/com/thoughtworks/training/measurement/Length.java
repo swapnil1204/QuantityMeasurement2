@@ -17,8 +17,10 @@ public class Length {
 
         if (object instanceof Length) {
             Length that = (Length) object;
-            return this.value == 1 && that.value == 12 || this.value == 0 && that.value == 0 || this.value == that.value && this.unit == that.unit ;
+            int inches = this.value * 12;
+            return inches == that.value;
         }
         return false;
     }
+
 }
