@@ -35,8 +35,8 @@ public class LengthTest {
     @Test
     void givenOneFootAndOneFoot_WhenEquals_ThenShouldBeEqual() {
 
-        Length oneFoot = new Length(1, Unit.FOOT);
-        Length otherFoot = new Length(1, Unit.FOOT);
+        Length oneFoot = new Length(1.0, Unit.FOOT);
+        Length otherFoot = new Length(1.0, Unit.FOOT);
 
         assertTrue(oneFoot.equals(otherFoot));
     }
@@ -73,6 +73,7 @@ public class LengthTest {
 
         assertTrue(oneFoot.equals(otherFoot));
     }
+
     @Test
     void givenOneInchAndTwoInch_WhenEquals_ThenShouldNotBeEqual() {
 

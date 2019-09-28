@@ -1,37 +1,24 @@
 package com.thoughtworks.training.measurement;
 
 public class Length {
-    private final int value;
+    private final double value;
     private final Unit unit;
-    private final int ONE_FEET_TO_INCH = 12;
 
-    public Length(int value, Unit unit) {
+    public Length(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
 
-        if (object instanceof Length) {
-
-            Length that = (Length) object;
-            if (this.value == that.value && this.unit == that.unit) {
-                return true;
-            }
-
-            if (this.unit == Unit.INCH) {
-                int feet = this.value / ONE_FEET_TO_INCH;
-                return feet == that.value;
-            }
-
-            int inches = this.value * ONE_FEET_TO_INCH;
-            return inches == that.value;
+        if (other instanceof Length) {
+            Length that = (Length) other;
+            return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
-
 }
