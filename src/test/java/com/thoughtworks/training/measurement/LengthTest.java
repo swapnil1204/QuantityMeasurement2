@@ -89,4 +89,12 @@ public class LengthTest {
 
         assertTrue(zeroFoot.equals(zeroInch));
     }
+
+    @Test
+    void givenOneInchThreeFoot_WhenEquals_ThenShouldBeEqual(){
+        Length twelveInch = new Length(12, Unit.inch);
+        Length oneFoot = new Length(1, Unit.foot);
+
+        assertTrue(oneFoot.equals(twelveInch));
+    }
 }
