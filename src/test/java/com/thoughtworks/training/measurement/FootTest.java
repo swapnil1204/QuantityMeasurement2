@@ -9,8 +9,8 @@ public class FootTest {
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
 
-        Foot zeroFoot = new Foot(0);
-        Foot anotherZeroFoot = new Foot(0);
+        Length zeroFoot = new Length(0);
+        Length anotherZeroFoot = new Length(0);
 
         assertTrue(zeroFoot.equals(anotherZeroFoot));
     }
@@ -18,7 +18,7 @@ public class FootTest {
     @Test
     void givenZeroFootAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
 
-        Foot zeroFoot = new Foot(0);
+        Length zeroFoot = new Length(0);
 
         assertFalse(zeroFoot.equals(new Object()));
     }
@@ -26,8 +26,8 @@ public class FootTest {
     @Test
     void givenOneFootAndTwoFoot_WhenEquals_ThenShouldNotBeEqual() {
 
-        Foot oneFoot = new Foot(1);
-        Foot twoFoot = new Foot(2);
+        Length oneFoot = new Length(1);
+        Length twoFoot = new Length(2);
 
         assertFalse(oneFoot.equals(twoFoot));
     }
@@ -35,8 +35,8 @@ public class FootTest {
     @Test
     void givenOneFootAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Foot oneFoot = new Foot(1);
-        Foot twoFoot = null;
+        Length oneFoot = new Length(1);
+        Length twoFoot = null;
 
         assertFalse(oneFoot.equals(twoFoot));
     }
