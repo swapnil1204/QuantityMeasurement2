@@ -14,13 +14,10 @@ public class Length {
         if (this == object) {
             return true;
         }
+
         if (object instanceof Length) {
             Length that = (Length) object;
-            return this.value == 0 && that.value == 0;
-        }
-        if (object instanceof Length) {
-            Length that = (Length) object;
-            return this.value == that.value && this.unit == that.unit;
+            return this.value == 0 && that.value == 0 || this.value == that.value && this.unit == that.unit;
         }
         return false;
 
