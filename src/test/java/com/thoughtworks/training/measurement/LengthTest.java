@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FootTest {
+public class LengthTest {
 
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
@@ -40,4 +40,38 @@ public class FootTest {
 
         assertFalse(oneFoot.equals(twoFoot));
     }
+
+    @Test
+    void givenZeroInch_WhenCompare_ThenShouldBeEqual() {
+        Length zeroInch = new Length(0);
+        Length anotherZeroInch = new Length(0);
+
+        assertTrue(zeroInch.equals(anotherZeroInch));
+    }
+
+    @Test
+    void givenZeroInchAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
+        Length zeroInch = new Length(0);
+
+        assertFalse(zeroInch.equals(new Object()));
+    }
+
+    @Test
+    void givenOneInchAndTwoInch_WhenEquals_ThenShouldNotBeEqual() {
+
+        Length oneInch = new Length(1);
+        Length twoInch = new Length(2);
+
+        assertFalse(oneInch.equals(twoInch));
+    }
+
+    @Test
+    void givenOneInchAndNull_WhenEquals_ThenShouldNotBeEqual() {
+
+        Length oneInch = new Length(1);
+        Length twoInch = null;
+
+        assertFalse(oneInch.equals(twoInch));
+    }
+
 }
