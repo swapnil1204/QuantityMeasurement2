@@ -17,16 +17,21 @@ public class Length {
         }
 
         if (object instanceof Length) {
+
             Length that = (Length) object;
-            if(this.unit==Unit.inch) {
+            if (this.value == that.value && this.unit == that.unit) {
+                return true;
+            }
+
+            if (this.unit == Unit.INCH) {
                 int feet = this.value / ONE_FEET_TO_INCH;
                 return feet == that.value;
             }
+
             int inches = this.value * ONE_FEET_TO_INCH;
             return inches == that.value;
         }
         return false;
     }
-
 
 }
