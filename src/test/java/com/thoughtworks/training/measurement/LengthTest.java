@@ -157,10 +157,11 @@ public class LengthTest {
     }
 
     @Test
-    void givenOneInchAndThreeInch_WhenAdd_ThenShouldBeFourInches() {
-        Length oneInch = new Length(0.0, Unit.INCH);
-        Length threeInch = new Length(0.0, Unit.INCH);
+    void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeFourInches() {
+        Length zeroInch = new Length(0.0, Unit.INCH);
+        Length anotherZeroInch = new Length(0.0, Unit.INCH);
 
-        assertEquals(new Length(0.0,Unit.INCH),oneInch.add(threeInch));
+        assertEquals(new Length(0.0,Unit.INCH),zeroInch.add(anotherZeroInch));
     }
+
 }
