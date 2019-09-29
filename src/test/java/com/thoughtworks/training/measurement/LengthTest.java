@@ -131,4 +131,12 @@ public class LengthTest {
 
         assertTrue(twelveInch.equals(oneFoot));
     }
+
+    @Test
+    void givenZeroYardAndZeroYard_WhenEquals_ThenShouldBeEqual() {
+        Length zeroYard = new Length(0, Unit.YARD);
+        Length anotherZeroYard = new Length(0, Unit.YARD);
+
+        assertTrue(zeroYard.equals(anotherZeroYard));
+    }
 }
