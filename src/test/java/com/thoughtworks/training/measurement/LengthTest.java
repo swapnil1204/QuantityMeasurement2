@@ -156,5 +156,11 @@ public class LengthTest {
         assertTrue(oneYard.equals(seventyTwoInches));
     }
 
+    @Test
+    void givenOneInchAndThreeInch_WhenAdd_ThenShouldBeFourInches() {
+        Length oneInch = new Length(0.0, Unit.INCH);
+        Length threeInch = new Length(0.0, Unit.INCH);
 
+        assertEquals(new Length(0.0,Unit.INCH),oneInch.add(threeInch));
+    }
 }

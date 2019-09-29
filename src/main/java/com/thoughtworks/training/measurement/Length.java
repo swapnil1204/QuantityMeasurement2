@@ -21,4 +21,9 @@ public class Length {
         }
         return false;
     }
+
+
+    public Length add(Length other) {
+        return new Length(0.0,Unit.INCH);
+    }
 }
