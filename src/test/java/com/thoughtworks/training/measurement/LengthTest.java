@@ -161,7 +161,7 @@ public class LengthTest {
         Length zeroInch = new Length(0.0, Unit.INCH);
         Length anotherZeroInch = new Length(0.0, Unit.INCH);
 
-        assertEquals(new Length(0.0,Unit.INCH),zeroInch.add(anotherZeroInch));
+        assertEquals(new Length(0.0, Unit.INCH), zeroInch.add(anotherZeroInch));
     }
 
     @Test
@@ -169,6 +169,15 @@ public class LengthTest {
         Length twoInch = new Length(2.0, Unit.INCH);
         Length anotherTwoInch = new Length(2.0, Unit.INCH);
 
-        assertEquals(new Length(4.0,Unit.INCH),twoInch.add(anotherTwoInch));
+        assertEquals(new Length(4.0, Unit.INCH), twoInch.add(anotherTwoInch));
     }
+
+    @Test
+    void givenOneFeetAndTwoInches_WhenAdd_ThenShouldBeFourInches() {
+        Length OneFeet = new Length(1.0, Unit.FOOT);
+        Length TwoInches = new Length(2.0, Unit.INCH);
+
+        assertEquals(new Length(14.0, Unit.INCH), OneFeet.add(TwoInches));
+    }
+
 }

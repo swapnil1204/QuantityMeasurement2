@@ -24,6 +24,6 @@ public class Length {
 
 
     public Length add(Length other) {
-        return new Length(this.value+ other.value, Unit.INCH);
+        return new Length(this.unit.conversionToBase(this.value)+ other.value, Unit.INCH);
     }
 }
