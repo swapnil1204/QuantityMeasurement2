@@ -224,4 +224,11 @@ public class QuantityTest {
         assertFalse(oneLiter.equals(oneGallon));
     }
 
+    @Test
+    void givenoneGallonAndOoneLiter_WhenAdd_ThenShouldBeReturn() {
+        Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
+        assertFalse(oneGallon.equals(oneLiter));
+    }
 }
