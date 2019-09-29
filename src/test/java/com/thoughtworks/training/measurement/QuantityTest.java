@@ -208,4 +208,20 @@ public class QuantityTest {
         assertTrue(oneGallon.equals(anotherOneGallon));
     }
 
+    @Test
+    void givenOneLiterAndAnotherOneLiter_WhenAdd_ThenShouldBeReturn() {
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity anotherOneLiter = new Quantity(1.0, Unit.LITER);
+
+        assertTrue(oneLiter.equals(anotherOneLiter));
+    }
+
+    @Test
+    void givenOneLiterAndOneGallon_WhenAdd_ThenShouldBeReturn() {
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
+
+        assertFalse(oneLiter.equals(oneGallon));
+    }
+
 }
