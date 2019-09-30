@@ -23,7 +23,9 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        return new Quantity(this.unit.conversionToBase(this.value)+ other.unit.conversionToBase(other.value), Unit.INCH);
+        if (unit == Unit.GALLON || unit == Unit.LITER)
+            return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.LITER);
+        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.INCH);
     }
 
     @Override
