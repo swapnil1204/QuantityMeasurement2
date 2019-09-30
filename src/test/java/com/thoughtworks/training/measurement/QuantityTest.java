@@ -291,4 +291,12 @@ public class QuantityTest {
             oneFoot.add(oneLiter);
         });
     }
+
+    @Test
+    void givenOneInchAndOneLiter_WhenEquals_ThenShouldBeReturnFalse() {
+        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
+        assertFalse(oneInch.equals(oneLiter));
+    }
 }
