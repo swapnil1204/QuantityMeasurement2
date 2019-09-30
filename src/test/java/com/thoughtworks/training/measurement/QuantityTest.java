@@ -209,7 +209,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneLiterAndAnotherOneLiter_WhenAdd_ThenShouldBeReturn() {
+    void givenOneLiterAndAnotherOneLiter_WhenEquals_ThenShouldBeReturn() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity anotherOneLiter = new Quantity(1.0, Unit.LITER);
 
@@ -296,28 +296,15 @@ public class QuantityTest {
         });
     }
 
-    @Test
-    void givenOneInchAndOneLiter_WhenEquals_ThenShouldBeReturnFalse() {
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
-        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
-
-        assertFalse(oneInch.equals(oneLiter));
-    }
-
-    @Test
-    void givenOneLiterAndOneInch_WhenEquals_ThenShouldBeReturnFalse() {
-        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
-
-        assertFalse(oneLiter.equals(oneInch));
-    }
 
     @Test
     void givenOneInchAndOneGallon_WhenEquals_ThenShouldBeReturnFalse() {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertFalse(oneInch.equals(oneGallon));
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneInch.add(oneGallon);
+        });
     }
 
     @Test
@@ -325,7 +312,9 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
 
-        assertFalse(oneGallon.equals(oneInch));
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneInch);
+        });
     }
 
     @Test
@@ -333,7 +322,9 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
 
-        assertFalse(oneGallon.equals(oneFoot));
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneGallon.add(oneFoot);
+        });
     }
 
     @Test
@@ -341,15 +332,9 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertFalse(oneFoot.equals(oneGallon));
-    }
-
-    @Test
-    void givenOneFootAndOneLiter_WhenEquals_ThenShouldBeReturnFalse() {
-        Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
-        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
-
-        assertFalse(oneFoot.equals(oneLiter));
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneFoot.add(oneGallon);
+        });
     }
 
     @Test
