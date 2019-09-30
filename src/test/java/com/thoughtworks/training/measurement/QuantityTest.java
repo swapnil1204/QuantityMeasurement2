@@ -312,11 +312,12 @@ public class QuantityTest {
         assertFalse(oneLiter.equals(oneInch));
     }
 
-//    @Test
-//    void givenOneLiterAndOneInch_WhenEquals_ThenShouldBeReturnFalse() {
-//        Quantity oneInch = new Quantity(1.0, Unit.LITER);
-//        Quantity oneLiter = new Quantity(1.0, Unit.INCH);
-//
-//        assertFalse(oneInch.equals(oneLiter));
-//    }
+    @Test
+    void givenOneInchAndOneGallon_WhenEquals_ThenShouldBeReturnFalse() {
+        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
+
+        assertFalse(oneInch.equals(oneGallon));
+    }
+
 }
