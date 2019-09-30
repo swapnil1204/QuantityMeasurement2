@@ -266,11 +266,20 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneAndOneInch_WhenAdd_ThenShouldBeReturnFalse() {
+    void givenOneAndOneInch_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneLiter);
+        });
+    }
+
+    @Test
+    void givenOneLiterAndOneFoot_WhenAdd_ThenShouldBeReturnException() {
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLiter.add(oneFoot);
         });
     }
 }

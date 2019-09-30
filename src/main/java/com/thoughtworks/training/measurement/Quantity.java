@@ -28,6 +28,9 @@ public class Quantity {
         if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("Litre and Inch are different quantities");
         }
+        if(this.unit == Unit.LITER && other.unit == Unit.FOOT){
+            throw new IllegalArgumentException("liter and foot cannot add");
+        }
         if (unit == Unit.GALLON || unit == Unit.LITER)
             return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.LITER);
         return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.INCH);
