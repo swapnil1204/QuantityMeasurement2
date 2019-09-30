@@ -25,7 +25,7 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        if (this.unit == Unit.LITER && other.unit == Unit.INCH) {
+        if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("Litre and Inch are different quantities");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)

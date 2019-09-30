@@ -264,4 +264,13 @@ public class QuantityTest {
             oneLiter.add(oneInch);
         });
     }
+
+    @Test
+    void givenOneAndOneInch_WhenAdd_ThenShouldBeReturnFalse() {
+        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneInch.add(oneLiter);
+        });
+    }
 }
