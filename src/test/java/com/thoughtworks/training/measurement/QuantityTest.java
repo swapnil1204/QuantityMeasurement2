@@ -298,7 +298,7 @@ public class QuantityTest {
 
 
     @Test
-    void givenOneInchAndOneGallon_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneInchAndOneGallon_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
@@ -308,7 +308,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneGallonAndOneInch_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneGallonAndOneInch_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
 
@@ -318,7 +318,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneGallonAndOneFoot_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneGallonAndOneFoot_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
 
@@ -328,7 +328,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneFootAndOneGallon_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneFootAndOneGallon_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
@@ -338,7 +338,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneYardAndOneLiter_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneYardAndOneLiter_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneYard = new Quantity(1.0, Unit.YARD);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
@@ -348,7 +348,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneYardAndOneLiter1_WhenEquals_ThenShouldBeReturnFalse() {
+    void givenOneYardAndOneLiter1_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneYard = new Quantity(1.0, Unit.YARD);
 
