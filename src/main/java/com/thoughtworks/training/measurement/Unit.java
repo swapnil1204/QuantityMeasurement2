@@ -14,4 +14,5 @@ public enum Unit {
     double conversionToBase(double value) {
         return value * conversionFactor;
     }
+
 }

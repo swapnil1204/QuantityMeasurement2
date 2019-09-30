@@ -16,7 +16,7 @@ public class Quantity {
         }
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
-            if(this.unit == Unit.INCH && that.unit == Unit.LITER){
+            if (this.unit == Unit.INCH && that.unit == Unit.LITER) {
                 return false;
             }
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
@@ -26,11 +26,9 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER) {
-            throw new IllegalArgumentException("Litre and Inch are different quantities");
-        }
-        if (this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER) {
-            throw new IllegalArgumentException("liter and foot cannot add");
+        if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER ||
+                this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER ) {
+            throw new IllegalArgumentException("these two quantities cannot be add");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)
             return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.LITER);
