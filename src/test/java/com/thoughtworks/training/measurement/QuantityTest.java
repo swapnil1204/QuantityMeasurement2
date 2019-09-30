@@ -342,7 +342,18 @@ public class QuantityTest {
         Quantity oneYard = new Quantity(1.0, Unit.YARD);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertFalse(oneYard.equals(oneLiter));
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneYard.add(oneLiter);
+        });
     }
 
+    @Test
+    void givenOneYardAndOneLiter1_WhenEquals_ThenShouldBeReturnFalse() {
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity oneYard = new Quantity(1.0, Unit.YARD);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLiter.add(oneYard);
+        });
+    }
 }

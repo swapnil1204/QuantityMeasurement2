@@ -28,7 +28,8 @@ public class Quantity {
         if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER ||
                 this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER ||
                 this.unit == Unit.GALLON && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.GALLON  ||
-                this.unit == Unit.GALLON && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.GALLON) {
+                this.unit == Unit.GALLON && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.GALLON ||
+                this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.LITER && other.unit == Unit.YARD) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)
