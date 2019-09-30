@@ -14,4 +14,14 @@ public enum Unit {
     double conversionToBase(double value) {
         return value * conversionFactor;
     }
+
+    Unit baseUnit() {
+        if (this == INCH || this == FOOT || this == YARD) {
+            return INCH;
+        }
+        return LITER;
+    }
+
+
+
 }
