@@ -352,4 +352,12 @@ public class QuantityTest {
         assertFalse(oneFoot.equals(oneLiter));
     }
 
+    @Test
+    void givenOneYardAndOneLiter_WhenEquals_ThenShouldBeReturnFalse() {
+        Quantity oneYard = new Quantity(1.0, Unit.YARD);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
+        assertFalse(oneYard.equals(oneLiter));
+    }
+
 }
