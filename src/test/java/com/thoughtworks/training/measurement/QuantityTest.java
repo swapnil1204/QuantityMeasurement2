@@ -247,4 +247,13 @@ public class QuantityTest {
 
         assertEquals(new Quantity(2.0, Unit.LITER), oneLiter.add(anotherOneLiter));
     }
+
+    @Test
+    void givenOneLiterAndOneGallon_WhenAdd_ThenShouldBeReturnFourPointSevenEight() {
+        Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
+        assertEquals(new Quantity(4.78, Unit.LITER), oneGallon.add(oneLiter));
+    }
+
 }
