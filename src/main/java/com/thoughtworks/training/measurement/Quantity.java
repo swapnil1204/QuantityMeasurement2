@@ -32,8 +32,10 @@ public class Quantity {
                 this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.LITER && other.unit == Unit.YARD) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
+
         if (unit == Unit.GALLON || unit == Unit.LITER)
             return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.LITER);
+
         return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.INCH);
     }
 
