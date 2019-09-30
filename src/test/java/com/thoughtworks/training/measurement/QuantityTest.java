@@ -328,4 +328,11 @@ public class QuantityTest {
         assertFalse(oneGallon.equals(oneInch));
     }
 
+    @Test
+    void givenOneGallonAndOneFoot_WhenEquals_ThenShouldBeReturnFalse() {
+        Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
+        Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
+
+        assertFalse(oneGallon.equals(oneFoot));
+    }
 }
