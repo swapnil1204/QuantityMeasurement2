@@ -28,7 +28,7 @@ public class Quantity {
         if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("Litre and Inch are different quantities");
         }
-        if(this.unit == Unit.LITER && other.unit == Unit.FOOT){
+        if (this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("liter and foot cannot add");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)

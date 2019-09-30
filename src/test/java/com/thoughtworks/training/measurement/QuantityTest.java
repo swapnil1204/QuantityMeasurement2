@@ -282,4 +282,13 @@ public class QuantityTest {
             oneLiter.add(oneFoot);
         });
     }
+
+    @Test
+    void givenOneFootAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
+        Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneFoot.add(oneLiter);
+        });
+    }
 }
