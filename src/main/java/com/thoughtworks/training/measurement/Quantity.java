@@ -17,7 +17,7 @@ public class Quantity {
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
 
-            if (this.unit.baseUnit() != that.unit.baseUnit()) {
+            if (baseUnit() != that.baseUnit()) {
                 return false;
             }
 
@@ -34,7 +34,13 @@ public class Quantity {
                 this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.LITER && other.unit == Unit.YARD) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
-        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
+
+        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), baseUnit());
+
+    }
+
+    private Unit baseUnit() {
+        return unit.baseUnit();
     }
 
     @Override
