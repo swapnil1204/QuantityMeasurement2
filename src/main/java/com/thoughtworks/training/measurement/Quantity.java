@@ -27,7 +27,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) {
         if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER ||
-                this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER ) {
+                this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
         if (unit == Unit.GALLON || unit == Unit.LITER)

@@ -217,7 +217,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenOneLiterAndOneGallon_WhenAdd_ThenShouldBeReturn() {
+    void givenOneLiterAndOneGallon_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
@@ -225,7 +225,7 @@ public class QuantityTest {
     }
 
     @Test
-    void givenoneGallonAndOoneLiter_WhenAdd_ThenShouldBeReturn() {
+    void givenoneGallonAndOoneLiter_WhenAdd_ThenShouldBeReturnFalse() {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
@@ -260,15 +260,17 @@ public class QuantityTest {
     void givenOneLiterAndOneInch_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
+
         assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneInch);
         });
     }
 
     @Test
-    void givenOneAndOneInch_WhenAdd_ThenShouldBeReturnException() {
+    void givenOneInchAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
         assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneLiter);
         });
@@ -278,6 +280,7 @@ public class QuantityTest {
     void givenOneLiterAndOneFoot_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
+
         assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneFoot);
         });
@@ -287,6 +290,7 @@ public class QuantityTest {
     void givenOneFootAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+
         assertThrows(IllegalArgumentException.class, () -> {
             oneFoot.add(oneLiter);
         });
