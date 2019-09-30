@@ -256,4 +256,12 @@ public class QuantityTest {
         assertEquals(new Quantity(4.779999999999999, Unit.LITER), oneGallon.add(oneLiter));
     }
 
+    @Test
+    void givenOneLiterAndOneInch_WhenAdd_ThenShouldBeReturnException() {
+        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        assertThrows(IllegalArgumentException.class, () -> {
+            oneLiter.add(oneInch);
+        });
+    }
 }

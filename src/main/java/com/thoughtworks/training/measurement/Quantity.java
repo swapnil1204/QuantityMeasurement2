@@ -1,5 +1,7 @@
 package com.thoughtworks.training.measurement;
 
+import java.util.InputMismatchException;
+
 public class Quantity {
     private final double value;
     private final Unit unit;
@@ -23,6 +25,9 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
+        if (this.unit == Unit.LITER && other.unit == Unit.INCH) {
+            throw new IllegalArgumentException("Litre and Inch are different quantities");
+        }
         if (unit == Unit.GALLON || unit == Unit.LITER)
             return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.LITER);
         return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), Unit.INCH);
