@@ -261,7 +261,7 @@ public class QuantityTest {
     @Test
     void givenOneLiterAndOneInch_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneLiter = Quantity.createLiter(1);
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneInch);
