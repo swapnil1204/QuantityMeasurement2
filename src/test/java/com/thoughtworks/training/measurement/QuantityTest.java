@@ -136,23 +136,23 @@ public class QuantityTest {
 
     @Test
     void givenZeroYardAndZeroYard_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroYard = new Quantity(0, Unit.YARD);
-        Quantity anotherZeroYard = new Quantity(0, Unit.YARD);
+        Quantity zeroYard = Quantity.createYard(0);
+        Quantity anotherZeroYard = Quantity.createYard(0);;
 
         assertEquals(zeroYard, anotherZeroYard);
     }
 
     @Test
     void givenOneYardAndOneYard_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneYard = new Quantity(1, Unit.YARD);
-        Quantity anotherOneYard = new Quantity(1, Unit.YARD);
+        Quantity oneYard = Quantity.createYard(0);;
+        Quantity anotherOneYard = Quantity.createYard(0);;
 
         assertEquals(oneYard, anotherOneYard);
     }
 
     @Test
     void givenTwoYardAndSeventyTwoInches_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneYard = new Quantity(1, Unit.YARD);
+        Quantity oneYard = Quantity.createYard(1);;
         Quantity seventyTwoInches = Quantity.createFoot(3);
 
         assertEquals(oneYard, seventyTwoInches);
@@ -349,7 +349,7 @@ public class QuantityTest {
 
     @Test
     void givenOneYardAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
-        Quantity oneYard = new Quantity(1.0, Unit.YARD);
+        Quantity oneYard = Quantity.createYard(1);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -361,7 +361,7 @@ public class QuantityTest {
     @Test
     void givenOneYardAndOneLiter1_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
-        Quantity oneYard = new Quantity(1.0, Unit.YARD);
+        Quantity oneYard = Quantity.createYard(1);
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneYard);
         });
