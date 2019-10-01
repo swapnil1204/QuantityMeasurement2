@@ -2,7 +2,7 @@ package com.thoughtworks.training.measurement;
 
 import org.junit.jupiter.api.Test;
 
-import static com.thoughtworks.training.measurement.Quantity.*;
+import static com.thoughtworks.training.measurement.QuantityFactory.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class QuantityTest {
