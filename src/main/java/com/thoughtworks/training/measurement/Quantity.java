@@ -26,18 +26,10 @@ public class Quantity {
     }
 
     public Quantity add(Quantity other) {
-        checkUnit(other);
-        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
-    }
-
-    private void checkUnit(Quantity other) {
-        if (this.unit == Unit.LITER && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.LITER ||
-                this.unit == Unit.LITER && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.LITER ||
-                this.unit == Unit.GALLON && other.unit == Unit.INCH || this.unit == Unit.INCH && other.unit == Unit.GALLON ||
-                this.unit == Unit.GALLON && other.unit == Unit.FOOT || this.unit == Unit.FOOT && other.unit == Unit.GALLON ||
-                this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.LITER && other.unit == Unit.YARD) {
+        if (!unit.baseUnit().equals(other.unit.baseUnit())) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
+        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
     }
 
     @Override
