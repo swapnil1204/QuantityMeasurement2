@@ -21,6 +21,10 @@ public class Quantity {
         return new Quantity(value, Unit.YARD);
     }
 
+    public static Quantity createLiter(double value) {
+        return new Quantity(value, Unit.LITER);
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) {
