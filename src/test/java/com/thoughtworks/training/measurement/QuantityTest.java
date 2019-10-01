@@ -247,7 +247,7 @@ public class QuantityTest {
         Quantity oneLiter = Quantity.createLiter(1);
         Quantity anotherOneLiter = Quantity.createLiter(1);
 
-        assertEquals(new Quantity(2.0, Unit.LITER), oneLiter.add(anotherOneLiter));
+        assertEquals(Quantity.createLiter(2), oneLiter.add(anotherOneLiter));
     }
 
     @Test
@@ -360,7 +360,7 @@ public class QuantityTest {
 
     @Test
     void givenOneYardAndOneLiter1_WhenAdd_ThenShouldBeReturnException() {
-        Quantity oneLiter = new Quantity(1.0, Unit.LITER);
+        Quantity oneLiter = Quantity.createLiter(1);
         Quantity oneYard = Quantity.createYard(1);
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneYard);
