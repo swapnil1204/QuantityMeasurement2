@@ -17,10 +17,9 @@ public class Quantity {
         if (other instanceof Quantity) {
             Quantity that = (Quantity) other;
 
-            if (baseUnit() != that.baseUnit()) {
+            if (unit.baseUnit() != that.unit.baseUnit()) {
                 return false;
             }
-
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
@@ -28,7 +27,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) {
         checkUnit(other);
-        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), baseUnit());
+        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
     }
 
     private void checkUnit(Quantity other) {
@@ -39,10 +38,6 @@ public class Quantity {
                 this.unit == Unit.YARD && other.unit == Unit.LITER || this.unit == Unit.LITER && other.unit == Unit.YARD) {
             throw new IllegalArgumentException("these two quantities cannot be add");
         }
-    }
-
-    private Unit baseUnit() {
-        return unit.baseUnit();
     }
 
     @Override

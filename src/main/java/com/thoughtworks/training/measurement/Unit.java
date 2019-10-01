@@ -25,11 +25,8 @@ public enum Unit {
         return value * conversionFactor;
     }
 
+    //Unit telling which is baseUnit of quantity i.e it is immutable
     Unit baseUnit() {
-        if (this.type == Measurement.LENGTH) {
-            return INCH;
-        }
-        return LITER;
+        return unit;
     }
-
 }
