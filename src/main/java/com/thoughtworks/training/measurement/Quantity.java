@@ -25,6 +25,10 @@ public class Quantity {
         return new Quantity(value, Unit.LITER);
     }
 
+    public static Quantity createGallon(double value) {
+        return new Quantity(value, Unit.GALLON);
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) {
