@@ -357,4 +357,19 @@ public class QuantityTest {
         });
     }
 
+//    @Test
+//    void givenOneKilogranAndOneThousandGram_WhenAdd_ThenShouldBeReturnException() {
+//        Quantity oneKilogram = new Quantity(1.0, Unit.KG);
+//        Quantity thousandGram = new Quantity(1000.0, Unit.GRAM);
+//
+//        assertTrue(oneKilogram.equals(thousandGram));
+//    }
+//
+//    @Test
+//    void givenOneKilogranAndOneThousandKilogram_WhenAdd_ThenShouldBeReturnException() {
+//        Quantity oneKilogram = new Quantity(1.0, Unit.KG);
+//        Quantity anotherOneKilogram = new Quantity(1.0, Unit.KG);
+//
+//        assertEquals(new Quantity(2000, Unit.GRAM),oneKilogram.add(anotherOneKilogram));
+//    }
 }

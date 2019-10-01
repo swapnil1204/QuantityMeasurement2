@@ -29,7 +29,6 @@ public class Quantity {
     public Quantity add(Quantity other) {
         checkUnit(other);
         return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), baseUnit());
-
     }
 
     private void checkUnit(Quantity other) {
