@@ -4,7 +4,6 @@ public enum Unit {
     INCH(1, Measurement.LENGTH), FOOT(12, Measurement.LENGTH, INCH), YARD(36, Measurement.LENGTH, INCH),
     LITER(1, Measurement.VOLUME), GALLON(3.78, Measurement.VOLUME, LITER);
 
-
     private final Unit unit;
     private Measurement type;
     private double conversionFactor;
