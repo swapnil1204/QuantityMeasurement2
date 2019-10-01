@@ -13,6 +13,14 @@ public class Quantity {
         return new Quantity(value, Unit.FOOT);
     }
 
+    public static Quantity createInch(double value) {
+        return new Quantity(value, Unit.INCH);
+    }
+
+    public static Quantity createYard(double value) {
+        return new Quantity(value, Unit.YARD);
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this == other) {
@@ -31,7 +39,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) {
         if (!unit.baseUnit().equals(other.unit.baseUnit())) {
-            throw new IllegalArgumentException(this.unit+" and "+other.unit+" are incompactible quantities.");
+            throw new IllegalArgumentException(this.unit + " and " + other.unit + " are incompactible quantities.");
         }
         return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
     }

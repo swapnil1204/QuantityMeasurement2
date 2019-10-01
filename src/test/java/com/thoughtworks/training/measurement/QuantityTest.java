@@ -55,14 +55,14 @@ public class QuantityTest {
     @Test
     void givenZeroInch_WhenCompare_ThenShouldBeEqual() {
         Quantity zeroInch = Quantity.createFoot(0);
-        Quantity anotherZeroInch = new Quantity(0, Unit.INCH);
+        Quantity anotherZeroInch = Quantity.createInch(0);
 
         assertEquals(zeroInch, anotherZeroInch);
     }
 
     @Test
     void givenZeroInchAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity zeroInch = new Quantity(0, Unit.INCH);
+        Quantity zeroInch = Quantity.createFoot(0);
 
         assertNotEquals(zeroInch, new Object());
     }
@@ -79,8 +79,8 @@ public class QuantityTest {
     @Test
     void givenOneInchAndTwoInch_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, Unit.INCH);
-        Quantity twoInch = new Quantity(2, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
+        Quantity twoInch = Quantity.createInch(2);
 
         assertNotEquals(oneInch, twoInch);
     }
@@ -88,7 +88,7 @@ public class QuantityTest {
     @Test
     void givenOneInchAndNull_WhenEquals_ThenShouldNotBeEqual() {
 
-        Quantity oneInch = new Quantity(1, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
         Quantity twoInch = null;
 
         assertNotEquals(oneInch, twoInch);
@@ -96,7 +96,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchOneFoot_WhenEquals_ThenShouldNotBeEqual() {
-        Quantity oneInch = new Quantity(1, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
         Quantity oneFoot = Quantity.createFoot(1);
 
         assertNotEquals(oneFoot, oneInch);
@@ -104,7 +104,7 @@ public class QuantityTest {
 
     @Test
     void givenZeroInchZeroFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity zeroInch = new Quantity(0, Unit.INCH);
+        Quantity zeroInch = Quantity.createInch(0);
         Quantity zeroFoot = Quantity.createFoot(0);
 
         assertEquals(zeroFoot, zeroInch);
@@ -112,7 +112,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchThreeFoot_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, Unit.INCH);
+        Quantity twelveInch = Quantity.createInch(12);
         Quantity oneFoot = Quantity.createFoot(1);
 
         assertEquals(oneFoot, twelveInch);
@@ -120,7 +120,7 @@ public class QuantityTest {
 
     @Test
     void givenTwoFeetAndTwentyFourInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twentyFourInch = new Quantity(24, Unit.INCH);
+        Quantity twentyFourInch = Quantity.createInch(24);
         Quantity twoFeet = Quantity.createFoot(2);
 
         assertEquals(twoFeet, twentyFourInch);
@@ -128,7 +128,7 @@ public class QuantityTest {
 
     @Test
     void givenOneFeetAndTwelveInch_WhenEquals_ThenShouldBeEqual() {
-        Quantity twelveInch = new Quantity(12, Unit.INCH);
+        Quantity twelveInch = Quantity.createInch(12);
         Quantity oneFoot = Quantity.createFoot(1);
 
         assertEquals(twelveInch, oneFoot);
@@ -160,34 +160,34 @@ public class QuantityTest {
 
     @Test
     void givenZeroInchAndZeroInch_WhenAdd_ThenShouldBeFourInches() {
-        Quantity zeroInch = new Quantity(0.0, Unit.INCH);
-        Quantity anotherZeroInch = new Quantity(0.0, Unit.INCH);
+        Quantity zeroInch = Quantity.createInch(0);
+        Quantity anotherZeroInch = Quantity.createInch(0);
 
-        assertEquals(new Quantity(0.0, Unit.INCH), zeroInch.add(anotherZeroInch));
+        assertEquals(Quantity.createInch(0), zeroInch.add(anotherZeroInch));
     }
 
     @Test
     void givenTwoInchAndZeroInch_WhenAdd_ThenShouldBeFourInches() {
-        Quantity twoInch = new Quantity(2.0, Unit.INCH);
-        Quantity anotherTwoInch = new Quantity(2.0, Unit.INCH);
+        Quantity twoInch = Quantity.createInch(2);
+        Quantity anotherTwoInch = Quantity.createInch(2);
 
-        assertEquals(new Quantity(4.0, Unit.INCH), twoInch.add(anotherTwoInch));
+        assertEquals(Quantity.createInch(4), twoInch.add(anotherTwoInch));
     }
 
     @Test
     void givenOneFeetAndTwoInches_WhenAdd_ThenShouldBeFourInches() {
         Quantity OneFeet = Quantity.createFoot(1);
-        Quantity TwoInches = new Quantity(2.0, Unit.INCH);
+        Quantity TwoInches = Quantity.createInch(2);
 
-        assertEquals(new Quantity(14.0, Unit.INCH), OneFeet.add(TwoInches));
+        assertEquals(Quantity.createInch(14), OneFeet.add(TwoInches));
     }
 
     @Test
     void givenTwoInchesAndOneFoott_WhenAdd_ThenShouldBeFourInches() {
-        Quantity twoInches = new Quantity(2.0, Unit.INCH);
+        Quantity twoInches = Quantity.createInch(2);
         Quantity oneFoot = Quantity.createFoot(1);
 
-        assertEquals(new Quantity(14.0, Unit.INCH), twoInches.add(oneFoot));
+        assertEquals(Quantity.createInch(14), twoInches.add(oneFoot));
     }
 
     @Test
@@ -271,7 +271,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -305,7 +305,7 @@ public class QuantityTest {
 
     @Test
     void givenOneInchAndOneGallon_WhenAdd_ThenShouldBeReturnException() {
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -317,7 +317,7 @@ public class QuantityTest {
     @Test
     void givenOneGallonAndOneInch_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
-        Quantity oneInch = new Quantity(1.0, Unit.INCH);
+        Quantity oneInch = Quantity.createInch(1);
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneGallon.add(oneInch);
