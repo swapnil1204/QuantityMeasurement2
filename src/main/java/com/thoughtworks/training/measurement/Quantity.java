@@ -3,10 +3,21 @@ package com.thoughtworks.training.measurement;
 public class Quantity {
     private final double value;
     private final Unit unit;
+    private IUnit unitInterface;
+
+    public Quantity(double value, Unit unit, IUnit unitInterface) {
+        this.value = value;
+        this.unit = unit;
+        this.unitInterface = unitInterface;
+    }
 
     public Quantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
+    }
+
+    public static Quantity createFoot(double value) {
+        return new Quantity(value, Unit.FOOT);
     }
 
     @Override
@@ -27,9 +38,9 @@ public class Quantity {
 
     public Quantity add(Quantity other) {
         if (!unit.baseUnit().equals(other.unit.baseUnit())) {
-            throw new IllegalArgumentException("these two quantities cannot be add");
+            throw new IllegalArgumentException(this.unit+" and "+other.unit+" are incompactible quantities.");
         }
-        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
+        return new Quantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit(), unitInterface);
     }
 
     @Override

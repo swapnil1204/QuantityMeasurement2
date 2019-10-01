@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class QuantityTest {
 
+    String halfMsg = " are incompactible quantities.";
+
     @Test
     void givenZeroFoot_WhenEquals_ThenShouldBeEqual() {
 
@@ -38,7 +40,7 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity otherFoot = new Quantity(1.0, Unit.FOOT);
 
-        assertTrue(oneFoot.equals(otherFoot));
+        assertEquals(oneFoot, otherFoot);
     }
 
     @Test
@@ -47,7 +49,7 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1, Unit.FOOT);
         Quantity twoFoot = null;
 
-        assertFalse(oneFoot.equals(twoFoot));
+        assertNotEquals(oneFoot, twoFoot);
     }
 
     @Test
@@ -55,14 +57,14 @@ public class QuantityTest {
         Quantity zeroInch = new Quantity(0, Unit.INCH);
         Quantity anotherZeroInch = new Quantity(0, Unit.INCH);
 
-        assertTrue(zeroInch.equals(anotherZeroInch));
+        assertEquals(zeroInch, anotherZeroInch);
     }
 
     @Test
     void givenZeroInchAndAnotherObject_WhenEquals_ThenShouldNotBeEqual() {
         Quantity zeroInch = new Quantity(0, Unit.INCH);
 
-        assertFalse(zeroInch.equals(new Object()));
+        assertNotEquals(zeroInch, new Object());
     }
 
     @Test
@@ -71,7 +73,7 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1, Unit.FOOT);
         Quantity otherFoot = new Quantity(1, Unit.FOOT);
 
-        assertTrue(oneFoot.equals(otherFoot));
+        assertEquals(oneFoot, otherFoot);
     }
 
     @Test
@@ -80,7 +82,7 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1, Unit.INCH);
         Quantity twoInch = new Quantity(2, Unit.INCH);
 
-        assertFalse(oneInch.equals(twoInch));
+        assertNotEquals(oneInch, twoInch);
     }
 
     @Test
@@ -89,7 +91,7 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1, Unit.INCH);
         Quantity twoInch = null;
 
-        assertFalse(oneInch.equals(twoInch));
+        assertNotEquals(oneInch, twoInch);
     }
 
     @Test
@@ -97,7 +99,7 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1, Unit.INCH);
         Quantity oneFoot = new Quantity(1, Unit.FOOT);
 
-        assertFalse(oneFoot.equals(oneInch));
+        assertNotEquals(oneFoot, oneInch);
     }
 
     @Test
@@ -105,7 +107,7 @@ public class QuantityTest {
         Quantity zeroInch = new Quantity(0, Unit.INCH);
         Quantity zeroFoot = new Quantity(0, Unit.FOOT);
 
-        assertTrue(zeroFoot.equals(zeroInch));
+        assertEquals(zeroFoot, zeroInch);
     }
 
     @Test
@@ -113,7 +115,7 @@ public class QuantityTest {
         Quantity twelveInch = new Quantity(12, Unit.INCH);
         Quantity oneFoot = new Quantity(1, Unit.FOOT);
 
-        assertTrue(oneFoot.equals(twelveInch));
+        assertEquals(oneFoot, twelveInch);
     }
 
     @Test
@@ -121,7 +123,7 @@ public class QuantityTest {
         Quantity twentyFourInch = new Quantity(24, Unit.INCH);
         Quantity twoFeet = new Quantity(2, Unit.FOOT);
 
-        assertTrue(twoFeet.equals(twentyFourInch));
+        assertEquals(twoFeet, twentyFourInch);
     }
 
     @Test
@@ -129,7 +131,7 @@ public class QuantityTest {
         Quantity twelveInch = new Quantity(12, Unit.INCH);
         Quantity oneFoot = new Quantity(1, Unit.FOOT);
 
-        assertTrue(twelveInch.equals(oneFoot));
+        assertEquals(twelveInch, oneFoot);
     }
 
     @Test
@@ -137,7 +139,7 @@ public class QuantityTest {
         Quantity zeroYard = new Quantity(0, Unit.YARD);
         Quantity anotherZeroYard = new Quantity(0, Unit.YARD);
 
-        assertTrue(zeroYard.equals(anotherZeroYard));
+        assertEquals(zeroYard, anotherZeroYard);
     }
 
     @Test
@@ -145,7 +147,7 @@ public class QuantityTest {
         Quantity oneYard = new Quantity(1, Unit.YARD);
         Quantity anotherOneYard = new Quantity(1, Unit.YARD);
 
-        assertTrue(oneYard.equals(anotherOneYard));
+        assertEquals(oneYard, anotherOneYard);
     }
 
     @Test
@@ -153,7 +155,7 @@ public class QuantityTest {
         Quantity oneYard = new Quantity(1, Unit.YARD);
         Quantity seventyTwoInches = new Quantity(3, Unit.FOOT);
 
-        assertTrue(oneYard.equals(seventyTwoInches));
+        assertEquals(oneYard, seventyTwoInches);
     }
 
     @Test
@@ -205,7 +207,7 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity anotherOneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertTrue(oneGallon.equals(anotherOneGallon));
+        assertEquals(oneGallon, anotherOneGallon);
     }
 
     @Test
@@ -213,7 +215,7 @@ public class QuantityTest {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity anotherOneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertTrue(oneLiter.equals(anotherOneLiter));
+        assertEquals(oneLiter, anotherOneLiter);
     }
 
     @Test
@@ -221,7 +223,7 @@ public class QuantityTest {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertFalse(oneLiter.equals(oneGallon));
+        assertNotEquals(oneLiter, oneGallon);
     }
 
     @Test
@@ -229,7 +231,7 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertFalse(oneGallon.equals(oneLiter));
+        assertNotEquals(oneGallon, oneLiter);
     }
 
     @Test
@@ -261,9 +263,10 @@ public class QuantityTest {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneInch);
         });
+        assertEquals("LITER and INCH" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -271,9 +274,10 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneLiter);
         });
+        assertEquals("INCH and LITER" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -281,9 +285,10 @@ public class QuantityTest {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneFoot);
         });
+        assertEquals("LITER and FOOT" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -291,9 +296,10 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneFoot.add(oneLiter);
         });
+        assertEquals("FOOT and LITER" + halfMsg, exception.getMessage());
     }
 
 
@@ -302,9 +308,10 @@ public class QuantityTest {
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneInch.add(oneGallon);
         });
+        assertEquals("INCH and GALLON" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -312,9 +319,10 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneInch = new Quantity(1.0, Unit.INCH);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneGallon.add(oneInch);
         });
+        assertEquals("GALLON and INCH" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -322,9 +330,10 @@ public class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneGallon.add(oneFoot);
         });
+        assertEquals("GALLON and FOOT" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -332,9 +341,10 @@ public class QuantityTest {
         Quantity oneFoot = new Quantity(1.0, Unit.FOOT);
         Quantity oneGallon = new Quantity(1.0, Unit.GALLON);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneFoot.add(oneGallon);
         });
+        assertEquals("FOOT and GALLON" + halfMsg, exception.getMessage());
     }
 
     @Test
@@ -342,18 +352,19 @@ public class QuantityTest {
         Quantity oneYard = new Quantity(1.0, Unit.YARD);
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
 
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneYard.add(oneLiter);
         });
+        assertEquals("YARD and LITER" + halfMsg, exception.getMessage());
     }
 
     @Test
     void givenOneYardAndOneLiter1_WhenAdd_ThenShouldBeReturnException() {
         Quantity oneLiter = new Quantity(1.0, Unit.LITER);
         Quantity oneYard = new Quantity(1.0, Unit.YARD);
-
-        assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             oneLiter.add(oneYard);
         });
+        assertEquals("LITER and YARD" + halfMsg, exception.getMessage());
     }
 }
