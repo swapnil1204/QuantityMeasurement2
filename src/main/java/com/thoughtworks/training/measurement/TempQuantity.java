@@ -1,24 +1,25 @@
-package com.thoughtworks.training.measurement.temperature;
+package com.thoughtworks.training.measurement;
 
-public class Temperature {
+import com.thoughtworks.training.measurement.temperature.Base;
 
-    private final double value;
-    private final Base unit;
+public class TempQuantity {
+    protected double value;
+    protected Unit unit;
 
     @Override
     public boolean equals(Object other) {
         if (this == other) {
             return true;
         }
-        if (other instanceof Temperature) {
-            Temperature that = (Temperature) other;
+        if (other instanceof TempQuantity) {
+            TempQuantity that = (TempQuantity) other;
 
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
 
-    public Temperature(double value, Base unit) {
+    public TempQuantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -30,4 +31,5 @@ public class Temperature {
                 ", unit=" + unit +
                 '}';
     }
+
 }

@@ -10,27 +10,26 @@ import com.thoughtworks.training.measurement.weight.Gram;
 import com.thoughtworks.training.measurement.weight.KiloGram;
 
 public class QuantityFactory {
-    public static Quantity createFoot(double value) {
-        return new Quantity(value, new Foot());
+
+    public static AddableQuantity createFoot(double value) {
+        return new AddableQuantity(value, new Foot());
     }
 
-    public static Quantity createInch(double value) {
-        return new Quantity(value, new Inch());
+    public static AddableQuantity createInch(double value) {
+        return new AddableQuantity(value, new Inch());
     }
 
-    public static Quantity createYard(double value) { return new Quantity(value, new Yard()); }
+    public static AddableQuantity createYard(double value) { return new AddableQuantity(value, new Yard()); }
 
-    public static Quantity createLiter(double value) {
-        return new Quantity(value, new Liter());
+    public static AddableQuantity createLiter(double value) { return new AddableQuantity(value, new Liter()); }
+
+    public static AddableQuantity createGallon(double value) {
+        return new AddableQuantity(value, new Gallon());
     }
 
-    public static Quantity createGallon(double value) {
-        return new Quantity(value, new Gallon());
-    }
+    public static AddableQuantity createGram(double value) { return new AddableQuantity(value, new Gram()); }
 
-    public static Quantity createGram(double value) { return new Quantity(value, new Gram()); }
-
-    public static Quantity createKiloGram(double value) { return new Quantity(value, new KiloGram()); }
+    public static AddableQuantity createKiloGram(double value) { return new AddableQuantity(value, new KiloGram()); }
 
     public static Temperature createCelcius(double value) { return new Temperature(value, new Celsius()); }
 
