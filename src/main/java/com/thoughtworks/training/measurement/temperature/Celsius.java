@@ -4,16 +4,14 @@ import com.thoughtworks.training.measurement.Unit;
 
 public class Celsius implements Unit {
 
-    private final double conversionFactor = 1;
-
     @Override
     public double conversionToBase(double value) {
-        return value * conversionFactor;
+        return (value * 9/5) + 32;
     }
 
     @Override
     public Unit baseUnit() {
-        return new Celsius();
+        return new Fahrenheit();
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Fahrenheit implements Unit {
 
     @Override
     public Unit baseUnit() {
-        return new Celsius();
+        return new Fahrenheit();
     }
 
     @Override
