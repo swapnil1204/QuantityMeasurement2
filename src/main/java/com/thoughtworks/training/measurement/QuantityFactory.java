@@ -6,6 +6,7 @@ import com.thoughtworks.training.measurement.length.Yard;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
 import com.thoughtworks.training.measurement.weight.Gram;
+import com.thoughtworks.training.measurement.weight.KiloGram;
 
 public class QuantityFactory {
     public static Quantity createFoot(double value) {
@@ -28,6 +29,6 @@ public class QuantityFactory {
 
     public static Quantity createGram(double value) { return new Quantity(value, new Gram()); }
 
-    public static Quantity createKiloGram(double value) { return new Quantity(value, new Gram()); }
+    public static Quantity createKiloGram(double value) { return new Quantity(value, new KiloGram()); }
 
 }

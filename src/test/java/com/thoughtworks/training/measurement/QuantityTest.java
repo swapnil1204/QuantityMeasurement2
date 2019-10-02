@@ -408,4 +408,14 @@ public class QuantityTest {
 
         assertEquals(oneKilogram, anotherOneKiloGram);
     }
+
+    @Test
+    void givenOneKiloGramAndOneInch_WhenAdd_ThenShouldBeReturnException() {
+        Quantity oneKiloGram = createKiloGram(1);
+        Quantity oneInch = createInch(1);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            oneKiloGram.add(oneInch);
+        });
+        assertEquals("KILOGRAM and INCH" + halfMsg, exception.getMessage());
+    }
 }
