@@ -2,11 +2,11 @@ package com.thoughtworks.training.measurement;
 
 public class AddableQuantity {
     private final double value;
-    private final Unit Iunit;
+    private final Unit unit;
 
-    public AddableQuantity(double value, Unit iunit) {
+    public AddableQuantity(double value, Unit unit) {
         this.value = value;
-        Iunit = iunit;
+        this.unit = unit;
     }
 
     @Override
@@ -17,26 +17,26 @@ public class AddableQuantity {
         if (other instanceof AddableQuantity) {
             AddableQuantity that = (AddableQuantity) other;
 
-            if (!(this.Iunit.baseUnit().equals(that.Iunit.baseUnit()))) {
+            if (!(this.unit.baseUnit().equals(that.unit.baseUnit()))) {
                 return false;
             }
-            return this.Iunit.conversionToBase(this.value) == that.Iunit.conversionToBase(that.value);
+            return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
 
     public AddableQuantity add(AddableQuantity other) {
-        if (!Iunit.baseUnit().equals(other.Iunit.baseUnit())) {
-            throw new IllegalArgumentException(this.Iunit + " and " + other.Iunit + " are incompactible quantities.");
+        if (!unit.baseUnit().equals(other.unit.baseUnit())) {
+            throw new IllegalArgumentException(this.unit + " and " + other.unit + " are incompactible quantities.");
         }
-        return new AddableQuantity(this.Iunit.conversionToBase(this.value) + other.Iunit.conversionToBase(other.value), Iunit.baseUnit());
+        return new AddableQuantity(this.unit.conversionToBase(this.value) + other.unit.conversionToBase(other.value), unit.baseUnit());
     }
 
     @Override
     public String toString() {
         return "AddableQuantity{" +
                 "value=" + value +
-                ", unit=" + Iunit +
+                ", unit=" + unit +
                 '}';
     }
 }
