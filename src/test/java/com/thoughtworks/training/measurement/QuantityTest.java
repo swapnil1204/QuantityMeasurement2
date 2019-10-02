@@ -452,4 +452,12 @@ public class QuantityTest {
 
         assertEquals(ZeroCelsius, thirtyTwoFahrenheit);
     }
+
+    @Test
+    void givenTwoCelsiusAndThirtyFivePointSix_WhenEquals_ThenShouldBeEqual() {
+        Quantity oneCelsius = createCelcius(2);
+        Quantity thirtyTwoFahrenheit = createFahrenheit(35.6);
+
+        assertEquals(oneCelsius, thirtyTwoFahrenheit);
+    }
 }
