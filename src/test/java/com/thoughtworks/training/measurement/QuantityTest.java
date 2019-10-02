@@ -391,4 +391,13 @@ public class QuantityTest {
         assertEquals("GRAM and INCH" + halfMsg, exception.getMessage());
     }
 
+    @Test
+    void givenOneGramAndOneLiter_WhenAdd_ThenShouldBeReturnException() {
+        Quantity oneGram = createGram(1);
+        Quantity oneLiter = createLiter(1);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            oneGram.add(oneLiter);
+        });
+        assertEquals("GRAM and LITER" + halfMsg, exception.getMessage());
+    }
 }
