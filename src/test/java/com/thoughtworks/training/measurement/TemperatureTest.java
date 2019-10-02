@@ -2,8 +2,7 @@ package com.thoughtworks.training.measurement;
 
 import org.junit.jupiter.api.Test;
 
-import static com.thoughtworks.training.measurement.QuantityFactory.createCelcius;
-import static com.thoughtworks.training.measurement.QuantityFactory.createFahrenheit;
+import static com.thoughtworks.training.measurement.QuantityFactory.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TemperatureTest {
