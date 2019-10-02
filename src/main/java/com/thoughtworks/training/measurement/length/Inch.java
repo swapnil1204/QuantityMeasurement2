@@ -1,8 +1,8 @@
 package com.thoughtworks.training.measurement.length;
 
-import com.thoughtworks.training.measurement.Base;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Inch implements Base {
+public class Inch implements Unit {
 
     private final double conversionFactor = 1;
 
@@ -12,7 +12,7 @@ public class Inch implements Base {
     }
 
     @Override
-    public Base baseUnit() {
+    public Unit baseUnit() {
         return new Inch();
     }
 

@@ -1,8 +1,8 @@
 package com.thoughtworks.training.measurement.volume;
 
-import com.thoughtworks.training.measurement.Base;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Gallon implements Base {
+public class Gallon implements Unit {
 
     private final double conversionFactor = 3.78;
 
@@ -12,7 +12,7 @@ public class Gallon implements Base {
     }
 
     @Override
-    public Base baseUnit() {
+    public Unit baseUnit() {
         return new Liter();
     }
 

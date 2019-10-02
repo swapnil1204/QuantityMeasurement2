@@ -1,8 +1,8 @@
 package com.thoughtworks.training.measurement.volume;
 
-import com.thoughtworks.training.measurement.Base;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Liter implements Base {
+public class Liter implements Unit {
 
     private final double conversionFactor = 1;
 
@@ -12,7 +12,7 @@ public class Liter implements Base {
     }
 
     @Override
-    public Base baseUnit() {
+    public Unit baseUnit() {
         return new Liter();
     }
 

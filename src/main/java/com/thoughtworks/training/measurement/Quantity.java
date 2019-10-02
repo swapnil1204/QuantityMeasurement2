@@ -2,7 +2,7 @@ package com.thoughtworks.training.measurement;
 
 public class Quantity {
     private final double value;
-    private final Base Iunit;
+    private final Unit Iunit;
 
 
     @Override
@@ -28,7 +28,7 @@ public class Quantity {
         return new Quantity(this.Iunit.conversionToBase(this.value) + other.Iunit.conversionToBase(other.value), Iunit.baseUnit());
     }
 
-    public Quantity(double value, Base unit) {
+    public Quantity(double value, Unit unit) {
         this.value = value;
         this.Iunit = unit;
     }

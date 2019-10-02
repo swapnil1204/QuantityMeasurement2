@@ -1,8 +1,8 @@
 package com.thoughtworks.training.measurement.weight;
 
-import com.thoughtworks.training.measurement.Base;
+import com.thoughtworks.training.measurement.Unit;
 
-public class Gram implements Base {
+public class Gram implements Unit {
 
     private final double conversionFactor = 1;
 
@@ -12,7 +12,7 @@ public class Gram implements Base {
     }
 
     @Override
-    public Base baseUnit() {
+    public Unit baseUnit() {
         return new Gram();
     }
 

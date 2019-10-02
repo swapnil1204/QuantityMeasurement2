@@ -1,6 +1,6 @@
 package com.thoughtworks.training.measurement;
 
-public interface Base {
+public interface Unit {
     double conversionToBase(double value);
-    Base baseUnit();
+    Unit baseUnit();
 }
