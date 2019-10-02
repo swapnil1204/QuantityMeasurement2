@@ -428,4 +428,12 @@ public class QuantityTest {
         });
         assertEquals("KILOGRAM and LITER" + halfMsg, exception.getMessage());
     }
+
+    @Test
+    void givenOneCelsiusAndOneCelsius_WhenEquals_ThenShouldBeEqual() {
+        Quantity oneCelsius = createCelcius(1);
+        Quantity anotherOneCelsius = createCelcius(1);
+
+        assertEquals(oneCelsius, anotherOneCelsius);
+    }
 }
