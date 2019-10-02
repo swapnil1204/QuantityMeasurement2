@@ -1,11 +1,9 @@
 package com.thoughtworks.training.measurement;
 
-import com.thoughtworks.training.measurement.temperature.Base;
-
 public class NonAddableQuantity {
 
     private final double value;
-    private final Base unit;
+    private final Unit unit;
 
     @Override
     public boolean equals(Object other) {
@@ -20,7 +18,7 @@ public class NonAddableQuantity {
         return false;
     }
 
-    public NonAddableQuantity(double value, Base unit) {
+    public NonAddableQuantity(double value, Unit unit) {
         this.value = value;
         this.unit = unit;
     }

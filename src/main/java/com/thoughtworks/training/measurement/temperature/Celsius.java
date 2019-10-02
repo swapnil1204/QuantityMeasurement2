@@ -1,10 +1,17 @@
 package com.thoughtworks.training.measurement.temperature;
 
-public class Celsius implements Base {
+import com.thoughtworks.training.measurement.Unit;
+
+public class Celsius implements Unit {
 
     @Override
     public double conversionToBase(double value) {
         return (value * 9 / 5) + 32;
+    }
+
+    @Override
+    public Unit baseUnit() {
+        return new Celsius();
     }
 
     @Override

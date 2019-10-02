@@ -1,11 +1,18 @@
 package com.thoughtworks.training.measurement.temperature;
 
-public class Fahrenheit implements Base {
+import com.thoughtworks.training.measurement.Unit;
+
+public class Fahrenheit implements Unit {
     private final double conversionFactor = 1;
 
     @Override
     public double conversionToBase(double value) {
         return value * conversionFactor;
+    }
+
+    @Override
+    public Unit baseUnit() {
+        return new Fahrenheit();
     }
 
     @Override
