@@ -31,8 +31,8 @@ public class QuantityFactory {
 
     public static AddableQuantity createKiloGram(double value) { return new AddableQuantity(value, new KiloGram()); }
 
-    public static Temperature createCelcius(double value) { return new Temperature(value, new Celsius()); }
+    public static NonAddableQuantity createCelcius(double value) { return new NonAddableQuantity(value, new Celsius()); }
 
-    public static Temperature createFahrenheit(double value) { return new Temperature(value, new Fahrenheit()); }
+    public static NonAddableQuantity createFahrenheit(double value) { return new NonAddableQuantity(value, new Fahrenheit()); }
 }
 

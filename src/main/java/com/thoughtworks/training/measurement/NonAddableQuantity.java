@@ -2,24 +2,25 @@ package com.thoughtworks.training.measurement;
 
 import com.thoughtworks.training.measurement.temperature.Base;
 
-public class TempQuantity {
-    protected double value;
-    protected Unit unit;
+public class NonAddableQuantity {
+
+    private final double value;
+    private final Base unit;
 
     @Override
     public boolean equals(Object other) {
         if (this == other) {
             return true;
         }
-        if (other instanceof TempQuantity) {
-            TempQuantity that = (TempQuantity) other;
+        if (other instanceof NonAddableQuantity) {
+            NonAddableQuantity that = (NonAddableQuantity) other;
 
             return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
         }
         return false;
     }
 
-    public TempQuantity(double value, Unit unit) {
+    public NonAddableQuantity(double value, Base unit) {
         this.value = value;
         this.unit = unit;
     }
@@ -31,5 +32,4 @@ public class TempQuantity {
                 ", unit=" + unit +
                 '}';
     }
-
 }
