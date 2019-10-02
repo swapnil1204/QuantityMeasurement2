@@ -5,6 +5,7 @@ import com.thoughtworks.training.measurement.length.Inch;
 import com.thoughtworks.training.measurement.length.Yard;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
+import com.thoughtworks.training.measurement.weight.Gram;
 
 public class QuantityFactory {
     public static Quantity createFoot(double value) {
@@ -15,9 +16,7 @@ public class QuantityFactory {
         return new Quantity(value, new Inch());
     }
 
-    public static Quantity createYard(double value) {
-        return new Quantity(value, new Yard());
-    }
+    public static Quantity createYard(double value) { return new Quantity(value, new Yard()); }
 
     public static Quantity createLiter(double value) {
         return new Quantity(value, new Liter());
@@ -26,5 +25,7 @@ public class QuantityFactory {
     public static Quantity createGallon(double value) {
         return new Quantity(value, new Gallon());
     }
+
+    public static Quantity createGram(double value) { return new Quantity(value, new Gram()); }
 
 }

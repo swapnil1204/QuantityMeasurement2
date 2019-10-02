@@ -372,4 +372,13 @@ public class QuantityTest {
         });
         assertEquals("LITER and YARD" + halfMsg, exception.getMessage());
     }
+
+    @Test
+    void givenOneGramAndAnotherOneGram_WhenEqual_ThenShouldBeEqual() {
+        Quantity oneGram = createGram(1);
+        Quantity anotherOneGram = createGram(1);
+
+        assertEquals(oneGram, anotherOneGram);
+    }
+
 }
