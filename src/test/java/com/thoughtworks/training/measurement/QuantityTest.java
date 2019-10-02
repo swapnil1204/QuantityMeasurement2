@@ -436,4 +436,13 @@ public class QuantityTest {
 
         assertEquals(oneCelsius, anotherOneCelsius);
     }
+
+    @Test
+    void givenOneFahrenheitAndOneFahrenheit_WhenEquals_ThenShouldBeEqual() {
+        Quantity oneFahrenheit = createFahrenheit(1);
+        Quantity anotherOneFahrenheit = createFahrenheit(1);
+
+        assertEquals(oneFahrenheit, anotherOneFahrenheit);
+    }
+
 }

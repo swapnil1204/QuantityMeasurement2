@@ -2,13 +2,13 @@ package com.thoughtworks.training.measurement.temperature;
 
 import com.thoughtworks.training.measurement.Unit;
 
-public class Celsius implements Unit {
+public class Fahrenheit implements Unit {
 
     private final double conversionFactor = 1;
 
     @Override
     public double conversionToBase(double value) {
-        return value * conversionFactor;
+        return value * conversionFactor ;
     }
 
     @Override
@@ -18,6 +18,6 @@ public class Celsius implements Unit {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Celsius;
+        return obj instanceof Fahrenheit;
     }
 }
