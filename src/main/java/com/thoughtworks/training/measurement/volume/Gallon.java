@@ -1,4 +1,6 @@
-package com.thoughtworks.training.measurement;
+package com.thoughtworks.training.measurement.volume;
+
+import com.thoughtworks.training.measurement.Base;
 
 public class Gallon implements Base {
 

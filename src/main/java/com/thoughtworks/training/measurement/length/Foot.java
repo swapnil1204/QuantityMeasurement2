@@ -1,8 +1,9 @@
-package com.thoughtworks.training.measurement;
+package com.thoughtworks.training.measurement.length;
 
-public class Inch implements Base{
+import com.thoughtworks.training.measurement.Base;
 
-    private final double conversionFactor = 1;
+public class Foot implements Base {
+    private final double conversionFactor = 12;
 
     @Override
     public double conversionToBase(double value) {
@@ -16,11 +17,11 @@ public class Inch implements Base{
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Inch;
+        return obj instanceof Foot;
     }
 
     @Override
     public String toString() {
-        return "INCH";
+        return "FOOT";
     }
 }

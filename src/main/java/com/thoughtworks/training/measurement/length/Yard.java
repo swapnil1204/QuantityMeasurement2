@@ -1,8 +1,10 @@
-package com.thoughtworks.training.measurement;
+package com.thoughtworks.training.measurement.length;
 
-public class Liter implements Base {
+import com.thoughtworks.training.measurement.Base;
 
-    private final double conversionFactor = 1;
+public class Yard implements Base {
+
+    private final double conversionFactor = 36;
 
     @Override
     public double conversionToBase(double value) {
@@ -11,16 +13,16 @@ public class Liter implements Base {
 
     @Override
     public Base baseUnit() {
-        return new Liter();
+        return new Inch();
     }
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Liter;
+        return obj instanceof Yard;
     }
 
     @Override
     public String toString() {
-        return "LITER";
+        return "YARD";
     }
 }
