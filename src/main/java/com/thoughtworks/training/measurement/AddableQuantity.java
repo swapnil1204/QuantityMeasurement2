@@ -1,28 +1,13 @@
 package com.thoughtworks.training.measurement;
 
-public class AddableQuantity {
+public class AddableQuantity extends NonAddableQuantity {
     private final double value;
     private final Unit unit;
 
     public AddableQuantity(double value, Unit unit) {
+        super(value,unit);
         this.value = value;
         this.unit = unit;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (this == other) {
-            return true;
-        }
-        if (other instanceof AddableQuantity) {
-            AddableQuantity that = (AddableQuantity) other;
-
-            if (!(this.unit.baseUnit().equals(that.unit.baseUnit()))) {
-                return false;
-            }
-            return this.unit.conversionToBase(this.value) == that.unit.conversionToBase(that.value);
-        }
-        return false;
     }
 
     public AddableQuantity add(AddableQuantity other) {
