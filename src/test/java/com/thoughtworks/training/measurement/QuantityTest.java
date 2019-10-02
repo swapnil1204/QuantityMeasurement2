@@ -400,4 +400,12 @@ public class QuantityTest {
         });
         assertEquals("GRAM and LITER" + halfMsg, exception.getMessage());
     }
+
+    @Test
+    void givenOneKilogramAndAnotherOneKilogram_WhenEqual_ThenShouldBeEqual() {
+        Quantity oneKilogram = createKiloGram(1);
+        Quantity anotherOneKiloGram = createKiloGram(1);
+
+        assertEquals(oneKilogram, anotherOneKiloGram);
+    }
 }

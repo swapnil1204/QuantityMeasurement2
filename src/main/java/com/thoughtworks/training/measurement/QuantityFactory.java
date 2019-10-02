@@ -28,4 +28,6 @@ public class QuantityFactory {
 
     public static Quantity createGram(double value) { return new Quantity(value, new Gram()); }
 
+    public static Quantity createKiloGram(double value) { return new Quantity(value, new Gram()); }
+
 }
