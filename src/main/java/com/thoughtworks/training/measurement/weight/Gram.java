@@ -20,4 +20,9 @@ public class Gram implements Base {
     public boolean equals(Object obj) {
         return obj instanceof Gram;
     }
+
+    @Override
+    public String toString() {
+        return "GRAM";
+    }
 }
