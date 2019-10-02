@@ -1,5 +1,6 @@
 package com.thoughtworks.training.measurement;
 
+import com.thoughtworks.training.measurement.temperature.Temperature;
 import org.junit.jupiter.api.Test;
 
 import static com.thoughtworks.training.measurement.QuantityFactory.*;
@@ -427,37 +428,5 @@ public class QuantityTest {
             oneKiloGram.add(oneLiter);
         });
         assertEquals("KILOGRAM and LITER" + halfMsg, exception.getMessage());
-    }
-
-    @Test
-    void givenOneCelsiusAndOneCelsius_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneCelsius = createCelcius(1);
-        Quantity anotherOneCelsius = createCelcius(1);
-
-        assertEquals(oneCelsius, anotherOneCelsius);
-    }
-
-    @Test
-    void givenOneFahrenheitAndOneFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneFahrenheit = createFahrenheit(1);
-        Quantity anotherOneFahrenheit = createFahrenheit(1);
-
-        assertEquals(oneFahrenheit, anotherOneFahrenheit);
-    }
-
-    @Test
-    void givenZeroCelciusAndThirtyTwoFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity ZeroCelsius = createCelcius(0);
-        Quantity thirtyTwoFahrenheit = createFahrenheit(32);
-
-        assertEquals(ZeroCelsius, thirtyTwoFahrenheit);
-    }
-
-    @Test
-    void givenTwoCelsiusAndThirtyFivePointSix_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneCelsius = createCelcius(2);
-        Quantity thirtyTwoFahrenheit = createFahrenheit(35.6);
-
-        assertEquals(oneCelsius, thirtyTwoFahrenheit);
     }
 }

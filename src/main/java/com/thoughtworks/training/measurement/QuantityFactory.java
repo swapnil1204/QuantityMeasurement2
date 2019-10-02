@@ -3,8 +3,7 @@ package com.thoughtworks.training.measurement;
 import com.thoughtworks.training.measurement.length.Foot;
 import com.thoughtworks.training.measurement.length.Inch;
 import com.thoughtworks.training.measurement.length.Yard;
-import com.thoughtworks.training.measurement.temperature.Celsius;
-import com.thoughtworks.training.measurement.temperature.Fahrenheit;
+import com.thoughtworks.training.measurement.temperature.*;
 import com.thoughtworks.training.measurement.volume.Gallon;
 import com.thoughtworks.training.measurement.volume.Liter;
 import com.thoughtworks.training.measurement.weight.Gram;
@@ -33,9 +32,8 @@ public class QuantityFactory {
 
     public static Quantity createKiloGram(double value) { return new Quantity(value, new KiloGram()); }
 
-    public static Quantity createCelcius(double value) { return new Quantity(value, new Celsius()); }
+    public static Temperature createCelcius(double value) { return new Temperature(value, new Celsius()); }
 
-    public static Quantity createFahrenheit(double value) { return new Quantity(value, new Fahrenheit()); }
-
+    public static Temperature createFahrenheit(double value) { return new Temperature(value, new Fahrenheit()); }
 }
 
