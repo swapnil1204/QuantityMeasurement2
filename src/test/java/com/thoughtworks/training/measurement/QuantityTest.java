@@ -447,9 +447,9 @@ public class QuantityTest {
 
     @Test
     void givenZeroCelciusAndThirtyTwoFahrenheit_WhenEquals_ThenShouldBeEqual() {
-        Quantity oneCelsius = createCelcius(1);
+        Quantity ZeroCelsius = createCelcius(0);
         Quantity thirtyTwoFahrenheit = createFahrenheit(32);
 
-
+        assertEquals(ZeroCelsius, thirtyTwoFahrenheit);
     }
 }
