@@ -157,7 +157,7 @@ public class QuantityTest {
     @Test
     void givenTwoYardAndSeventyTwoInches_WhenEquals_ThenShouldBeEqual() {
         Quantity oneYard = createYard(1);
-        ;
+
         Quantity seventyTwoInches = createFoot(3);
 
         assertEquals(oneYard, seventyTwoInches);
