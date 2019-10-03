@@ -22,7 +22,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = 'com.thoughtworks.training'
-            artifactId = 'CompareLengths'
+            artifactId = 'QuantityMeasurement'
             version = '1.1'
 
             from components.java
